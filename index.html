@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap css cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/formToWizard.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- jQuery js cdn -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap js cdn -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.formtowizard.js"></script>
+    <script src="js/main.js"></script>
+    <title>Микрокредитование</title>
+</head>
+<body>
+
+<!-- multistep form -->
+<form id="msform">
+
+    <!-- progressbar -->
+    <ul id="progressbar">
+        <li data-step="1" class="active">Сумма и счёт</li>
+        <li data-step="2">Персональная информация</li>
+        <li data-step="3">Суммарная информация</li>
+    </ul>
+
+    <!-- fieldsets -->
+    <fieldset class="step_1 active" data-step="1">
+        <h2 class="fs-title">Сумма и счёт</h2>
+        <h3 class="fs-subtitle">Все поля обязательны к заполнению</h3>
+        <p>Сумма:</p>
+        <input type="text" name="summ" title="Введите необходимую сумму. (число от 1 до 10000)"/>
+        <p>Срок:</p>
+        <input type="text" name="time" title="Укажите срок займа в месяцах (число от 1 до 12"/>
+        <input type="button" name="next" class="next action-button" value="Вперёд" id="step_1_next" disabled/>
+    </fieldset>
+    <fieldset class="step_2" data-step="2">
+        <h2 class="fs-title">Персональная информация</h2>
+        <h3 class="fs-subtitle">Все поля обязательны к заполнению</h3>
+        <p>ИИН</p>
+        <input type="text" name="inn" placeholder="ИИН" title="Введите ваш ИИН"/>
+        <p>Фамилия</p>
+        <input type="text" name="last_name" placeholder="Фамилия" title="Введите фамилию, на русском языке"/>
+        <p>Имя</p>
+        <input type="text" name="first_name" placeholder="Имя" title="Введите имя, на русском языке"/>
+        <p>Город</p>
+        <input type="text" name="city" placeholder="Город" class="Autocomplete" title="Укажите город"/>
+        <input type="button" name="previous" class="previous action-button" value="Назад"/>
+        <input type="button" name="next" class="next action-button" value="Вперёд" id="step_2_next" disabled/>
+    </fieldset>
+    <fieldset class="step_3" data-step="3">
+        <h2 class="fs-title">Проверьте информацию</h2>
+        <ul id="data_list">
+            <li>Сумма: <span class="summ"></span></li>
+            <li>Срок: <span class="time"></span></li>
+            <li>ИНН: <span class="inn"></span></li>
+            <li>Фамилия: <span class="last_name"></span></li>
+            <li>Имя: <span class="first_name"></span></li>
+            <li>Город: <span class="city"></span></li>
+        </ul>
+        <input type="button" name="previous" class="previous action-button" value="Назад"/>
+        <input type="submit" name="submit" class="submit action-button" value="Отправить!" id="send"/>
+    </fieldset>
+
+</form>
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCROwDsuBuWI9bAay5ac8UqodTIeWg0lEI&libraries=places"></script>
+
+</body>
+</html>
